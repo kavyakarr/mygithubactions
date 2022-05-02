@@ -15,7 +15,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    timeout-minutes: 1
+    
     steps:
       -
         name: Checkout 
@@ -38,4 +39,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/sampledemo:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/sampledemo:v1
